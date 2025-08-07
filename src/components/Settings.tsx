@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowLeft, Volume2, VolumeX, Music, MusicOff } from 'lucide-react';
+import { ArrowLeft, Volume2, VolumeX, Music } from 'lucide-react';
 import { useGameStore } from '../store/gameStore';
 
 interface SettingsProps {
@@ -83,7 +82,7 @@ export default function Settings({ onBack }: SettingsProps) {
                     {musicEnabled ? (
                       <Music className="w-6 h-6 text-[#354093]" />
                     ) : (
-                      <MusicOff className="w-6 h-6 text-[#6b7280]" />
+                      <Music className="w-6 h-6 text-[#6b7280]" />
                     )}
                     <span className="text-[#354093] font-black" style={{fontFamily: 'Impact, Arial Black, sans-serif'}}>🎶 MUSIC</span>
                   </div>
@@ -120,27 +119,6 @@ export default function Settings({ onBack }: SettingsProps) {
                     onChange={(e) => setVolume(parseFloat(e.target.value))}
                     className="w-full h-3 bg-[#354093] border-2 border-[#E31902] rounded-lg appearance-none cursor-pointer slider"
                   />
-                  <style jsx>{`
-                    .slider::-webkit-slider-thumb {
-                      appearance: none;
-                      width: 24px;
-                      height: 24px;
-                      border-radius: 50%;
-                      background: #E31902;
-                      border: 3px solid #FFED6D;
-                      cursor: pointer;
-                      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-                    }
-                    .slider::-moz-range-thumb {
-                      width: 24px;
-                      height: 24px;
-                      border-radius: 50%;
-                      background: #E31902;
-                      border: 3px solid #FFED6D;
-                      cursor: pointer;
-                      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-                    }
-                  `}</style>
                 </div>
               </div>
             </div>
